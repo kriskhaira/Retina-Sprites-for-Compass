@@ -16,7 +16,7 @@
   //    if `pad` is non-zero, then that's how much padding the element will have (requires
   //    $spacing on the sprite maps). Great for iPhone interfaces to make hit areas bigger.
   //
-@mixin _retina-sprite($name, $sprites, $sprites2x, $hover, $active, $dimensions: true, $pad: 0) {  
+@mixin _retina-sprite($name, $sprites, $sprites2x, $hover, $active, $dimensions: true, $pad: 0) {
   @if $dimensions == true {
     @include sprite-dimensions($sprites, $name);
   }
@@ -36,11 +36,11 @@
       background-position: sprite-position($sprites, $name_active, -$pad, -$pad);
     }
   }
-  
+
   @if $pad > 0 {
     padding: $pad;
   }
-  
+
   @media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
     & {
       $pos: sprite-position($sprites2x, $name, -$pad * 2, -$pad * 2);
@@ -50,7 +50,7 @@
       //  sprite-path() returns the path of the generated sprite sheet, which
       //  image-width() calculates the width of. the ceil() is in place in case
       //  you have sprites that have an odd-number of pixels in width
-      
+
       @if $hover == true {
         $name_hover: $name + _hover;    // create myButton_hover and assign it
         &:hover{
